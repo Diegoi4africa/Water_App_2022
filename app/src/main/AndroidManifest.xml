@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.i4africa.water_app">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/wpm_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/wpm_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar">
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".Scanner" />
+        <activity android:name=".Sync" />
+        <activity android:name=".HiddenChecker" />
+        <activity android:name=".LactalisWarehouseCoolingSystemQuestions">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/warehouse/cooling-system"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisWarehouseMunicpalWaterQuestions">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/warehouse/municipal-water"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisSteriSterilizationTower">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/sterilization-tower"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisSteriIceDam">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/steri-ice-dam"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisSteriCondensorQuestions">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/steri-condenser"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisUHTIceDam">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/uht-ice-dam"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisCoolingSystemQuestions">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/uht-condenser"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".lactalisMunicipalWaterQuestions">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/municipal-water"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LactalisBoilerQuestions">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="water-app.wpmsa.co.za"
+                    android:pathPattern="/lactalis/factory/boiler"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ComponentSelection" />
+        <activity android:name=".InputSelection" />
+        <activity android:name=".LocationSelect" />
+        <activity android:name=".SiteSelection" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

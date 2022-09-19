@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LactalisBoilerQuestions"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/primaryColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/lbl_Clients"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/fira_sans"
+            android:gravity="center_vertical"
+            android:text="Boiler Questions"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imagesync"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="sync_data"
+            android:src="@drawable/ic_sync"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="50dp"
+            android:onClick="logout"
+            android:src="@drawable/lock_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.993"
+            app:layout_constraintStart_toEndOf="@+id/lbl_Clients"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="35dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_gravity="center_vertical"
+                android:onClick="setDate">
+
+                <TextView
+                    android:id="@+id/lbl_date_selection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="100"
+                    android:text="Select Date"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/img_date_icon"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="5"
+                    app:srcCompat="@drawable/ic_calendar"
+                    tools:ignore="VectorDrawableCompat" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="20sp"
+                    android:text="Input Select"
+                    android:layout_weight="25" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cb_Lactalis_Boiler_daily"
+                    android:layout_width="wrap_content"
+                    android:buttonTint="@color/primaryColor"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_height="wrap_content"
+                    android:text="Daily"
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryColor"
+                    android:layout_weight="10" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cb_Lactalis_Boiler_weekly"
+                    android:buttonTint="@color/primaryColor"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_height="wrap_content"
+                    android:text="Weekly"
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryColor"
+                    android:layout_weight="10" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cb_Lactalis_Boiler_monthly"
+                    android:layout_width="wrap_content"
+                    android:buttonTint="@color/primaryColor"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Monthly"
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryColor"
+                    android:layout_weight="10" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler Feed"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_feed_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_feed_tds_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler feed TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_feed_tds"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_feed_ph_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler feed pH"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_feed_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_feed_hardness_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler feed Hardness mg/l  "
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_feed_hardness"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_feed_chlorides_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler feed Chlorides mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_feed_chlorides"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_feed_alkalinity_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler feed Total Alkalinity mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_feed_alkalinity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_softener"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler Softener"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_softener_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_softener_hardness_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler softener hardness mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_softener_hardness"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_softener_TDS_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler softener TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_softener_TDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_softener_inlet_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler softener inlet meter reading"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_softener_inlet"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_softener_outlet_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler softener outlet meter reading"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_softener_outlet"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_Condensate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler Condensate"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_condensate_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_condensate_TDS_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler Condensate return - TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_condensate_TDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_condensate_ph_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler Condensate return - pH"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_condensate_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_condensate_hardness_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler Condensate return - hardness mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_condensate_hardness"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler 1"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_1_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_meter_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 - coal fired feed water meter reading"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_meter"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:id="@+id/que_lactalis_factory_boiler_1_opstndBy_cont"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Boiler 1 in Standby"
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryColor"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_weight="50" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical|right"
+                    android:layout_weight="50">
+
+                    <RadioButton
+                        android:id="@+id/rdbn_lactalis_factory_boiler_1_stndBy_yes"
+                        android:layout_width="85dp"
+                        android:layout_height="20dp"
+                        android:buttonTint="@color/primaryColor"
+                        android:text="Yes"
+                        android:textColor="@color/primaryColor"
+                        android:onClick="radioButtonCheck" />
+
+                    <RadioButton
+                        android:id="@+id/rdbn_lactalis_factory_boiler_1_stndBy_no"
+                        android:layout_width="85dp"
+                        android:layout_height="20dp"
+                        android:text="No"
+                        android:buttonTint="@color/primaryColor"
+                        android:textColor="@color/primaryColor"
+                        android:onClick="radioButtonCheck" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@color/primaryColor" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_TDS_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_TDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_ph_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 pH"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_ohalk_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 OH Alk mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_ohalk"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_chlorides_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 Chlorides mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_chlorides"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_sulphite_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 Sulphite mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_sulphite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_phosphate_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 Phosphate mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_phosphate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_hardness_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 Total hardness mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_hardness"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_1_stndby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler 1 - Standby"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_1_stndby_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_standBy_TDS_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 - Standby TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_stndBy_TDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_stndBy_ph_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 - Standby pH"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_stndBy_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_stndBy_ohalk_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 - Standby OH Alk mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_stndBy_ohalk"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_1_stndBy_sulphite_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 1 - Standby Sulphite mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_1_stndBy_sulphite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler 2"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_2_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_meter_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 HFO feed water meter reading"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_meter"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:id="@+id/que_lactalis_factory_boiler_2_opstndBy_cont"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Boiler 2 in Standby"
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryColor"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_weight="50" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical|right"
+                    android:layout_weight="50">
+
+                    <RadioButton
+                        android:id="@+id/rdbn_lactalis_factory_boiler_2_stndBy_yes"
+                        android:layout_width="85dp"
+                        android:layout_height="20dp"
+                        android:buttonTint="@color/primaryColor"
+                        android:text="Yes"
+                        android:textColor="@color/primaryColor"
+                        android:onClick="radioButtonCheck" />
+
+                    <RadioButton
+                        android:id="@+id/rdbn_lactalis_factory_boiler_2_stndBy_no"
+                        android:layout_width="85dp"
+                        android:layout_height="20dp"
+                        android:text="No"
+                        android:buttonTint="@color/primaryColor"
+                        android:textColor="@color/primaryColor"
+                        android:onClick="radioButtonCheck" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@color/primaryColor" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_TDS_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_TDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_ph_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 pH"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_ohalk_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 OH Alk mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_ohalk"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_chlorides_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 Chlorides mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_chlorides"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_sulphite_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 Sulphite mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_sulphite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_phosphate_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 Phosphate mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_phosphate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_hardness_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 Total hardness mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_hardness"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lbl_lactalis_factory_boiler_2_stndby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Boiler 2 - Standby"
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/view_lactalis_factory_boiler_2_stndby_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/primaryColor"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_stndBy_TDS_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 - Standby TDS mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_stndBy_TDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_stndBy_ph_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 - Standby pH"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_stndBy_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_stndBy_sulphite_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 - Standby Sulphite mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_stndBy_sulphite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/que_lactalis_factory_boiler_2_stndBy_ohalk_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Boiler 2 - Standby OH alkalinity mg/l"
+                android:textColorHint="@color/primaryColor"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/que_lactalis_factory_boiler_2_stndBy_ohalk"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputFieldHeight"
+                    android:background="@color/white"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/primaryColor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txa_lactalis_factory_boiler_comments_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Comments"
+                android:textColorHint="@color/primaryColor"
+                app:boxStrokeColor="@color/primaryColor"
+                app:hintTextColor="@color/primaryColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txa_lactalis_factory_boiler_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/primaryColor"
+                    android:inputType="textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/btnLogin"
+                android:onClick="submitLactalisBoilerQuestions"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="255dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="32dp"
+                android:text="Submit"
+                android:textColor="@color/primaryColor"
+                android:textSize="24sp"
+                android:layout_marginBottom="64dp"
+                android:layout_marginStart="32dp"
+                app:iconTint="#FFFFFF"
+                android:fontFamily="@font/fira_sans_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cont_password"
+                app:rippleColor="@color/secondaryColor"
+                app:strokeColor="@color/primaryColor" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

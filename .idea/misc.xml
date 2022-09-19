@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_input_selection.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_boiler_questions.xml" value="0.17729996475149806" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_cooling_system_questions.xml" value="0.2" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_municipal_water_questions.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_steri_condensor_questions.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_steri_ice_dam.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_steri_sterilization_tower.xml" value="0.2" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_u_h_t_ice_dam.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_warehouse_cooling_system_questions.xml" value="0.18950131233595802" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_lactalis_warehouse_municpal_water_questions.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_site_selection.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/activity_sync.xml" value="0.1745049504950495" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/custom_app_bar.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/Water_App-master/app/src/main/res/layout/fragment_site_selection.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/diego.gonzalez/AndroidStudioProjects/water-app-master-a0ff4a9dc03c726ab2515d8926a9dc4aa832c2f2(1)/water-app-master-a0ff4a9dc03c726ab2515d8926a9dc4aa832c2f2/app/src/main/res/layout/activity_lactalis_cooling_system_questions.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

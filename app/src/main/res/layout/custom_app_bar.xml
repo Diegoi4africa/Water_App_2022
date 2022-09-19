@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/primaryColor">
+
+    <TextView
+        android:id="@+id/lbl_page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/fira_sans"
+        android:gravity="center_vertical"
+        android:text="@string/clients_label"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/icon_sync"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="sync_data"
+        android:src="@drawable/ic_sync"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_logout"
+        app:layout_constraintEnd_toStartOf="@+id/icon_logout"
+        app:layout_constraintTop_toTopOf="@+id/icon_logout" />
+
+    <ImageView
+        android:id="@+id/icon_logout"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="50dp"
+        android:onClick="logout"
+        android:src="@drawable/lock_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon_settings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_settings"
+        android:onClick="openSettings"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_sync"
+        app:layout_constraintEnd_toStartOf="@+id/icon_sync"
+        app:layout_constraintTop_toTopOf="@+id/icon_sync" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

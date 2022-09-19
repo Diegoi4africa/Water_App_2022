@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_background_Cont"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/login_bg">
+
+    <ImageView
+
+        android:id="@+id/wpmLogo"
+        android:layout_width="205dp"
+        android:src="@drawable/wpm_logo"
+        android:layout_height="205dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        android:contentDescription="@string/desc_wpmsa_logo_for_the_water_app" />
+
+    <TextView
+        android:id="@+id/lblWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/fira_sans"
+        android:text="@string/welcome_text"
+        android:textColor="@color/white"
+        android:textSize="84sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wpmLogo" />
+
+    <TextView
+        android:id="@+id/lblWelcome_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/fira_sans"
+        android:text="@string/login_desc"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWelcome" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cont_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:background="@color/white"
+        android:hint="@string/username_text"
+        app:hintTextColor="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWelcome_desc"
+        app:startIconContentDescription="@string/username_text"
+        app:startIconDrawable="@drawable/paper_plane_icon"
+        app:startIconTint="@color/primaryColor"
+        app:boxStrokeColor="@color/primaryColor"
+        android:textColorHint="@color/primaryColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txfUsername"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/fira_sans"
+            android:gravity="center_vertical"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="@color/primaryColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cont_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/password_label"
+        android:textColorHint="@color/primaryColor"
+        app:boxStrokeColor="@color/primaryColor"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/primaryColor"
+        app:hintTextColor="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cont_username"
+        app:startIconDrawable="@drawable/lock_icon"
+        app:startIconTint="@color/primaryColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txfPassword"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/fira_sans"
+            android:gravity="center_vertical"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/primaryColor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/login_text"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:iconTint="#FFFFFF"
+        android:fontFamily="@font/fira_sans_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cont_password"
+        app:rippleColor="@color/secondaryColor"
+        app:strokeColor="@color/white"
+        android:onClick="login"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintVertical_bias="0.697" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/Powered_by_i4africa"
+        android:textColor="@color/white"
+        android:fontFamily="@font/fira_sans_light"
+        android:alpha="0.9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

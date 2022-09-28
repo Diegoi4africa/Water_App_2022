@@ -2,9 +2,14 @@ package com.i4africa.water_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.os.Handler;
+
 import android.content.Context;
-import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,6 +24,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class HiddenChecker extends AppCompatActivity {
 
@@ -37,7 +45,39 @@ public class HiddenChecker extends AppCompatActivity {
         output = findViewById(R.id.lblOutput);
         arrOutput = findViewById(R.id.arrOutput);
         content = new ArrayList<>();
+//        checkConnectionEvery5Seconds();
     }
+
+//    //check Connection every 5 seconds and return true if connected to internet
+//    public boolean checkConnection() {
+//        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+//        return networkInfo != null && networkInfo.isConnected();
+//    }
+//
+//    //Run this method to check if the app is connected to the internet every 5 seconds
+//    public void checkConnectionEvery5Seconds() {
+//        final Handler handler = new Handler();
+//        Timer timer = new Timer();
+//        TimerTask timerTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        if (checkConnection()) {
+//                            Toast.makeText(HiddenChecker.this, "Connected to the internet", Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            Toast.makeText(HiddenChecker.this, "Not Connected to the internet", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//        timer.schedule(timerTask, 0, 5000);
+//    }
+
+
 
     public void submitToCache(View view) {
         Methods meth = new Methods();
@@ -178,6 +218,7 @@ public class HiddenChecker extends AppCompatActivity {
             output.setText(contents);
         }
         //TODO Change this to accept ArrayList to add to cache file from the submitted sqlArray
+
         for (int i = 4; i <= 10; i++) {
             String val = "Testing Line " + i;
             temp.add(val);

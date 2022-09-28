@@ -24,7 +24,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LocationSelect extends AppCompatActivity {
+public class  LocationSelect extends AppCompatActivity {
     private final int WAREHOUSE = 2;
     private final int FACTORY = 1;
     private TextView titleText;

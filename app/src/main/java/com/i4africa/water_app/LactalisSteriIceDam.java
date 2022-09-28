@@ -204,7 +204,6 @@ public class LactalisSteriIceDam extends AppCompatActivity {
                     con = DriverManager.getConnection(URL, USER, PASSWORD);
                     con.setAutoCommit(false);
 
-
                     PreparedStatement prepStatment = con.prepareStatement("INSERT INTO Comment(CommentText, UserID, FormID) VALUES (?, ?, (SELECT FormID FROM Form WHERE FromName = ?))");
                     prepStatment.setString(1, comment);
                     prepStatment.setInt(2, userID);
@@ -216,7 +215,7 @@ public class LactalisSteriIceDam extends AppCompatActivity {
                     prepStatment.close();
                 } catch (Exception e) {
                     con.rollback();
-                    error = "There was a fuckup, please try again you noob";
+                    error = "There was a Error, please try again later";
                 }
                 con.close();
             } catch (Exception e) {

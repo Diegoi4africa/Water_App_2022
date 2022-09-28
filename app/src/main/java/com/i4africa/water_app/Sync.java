@@ -39,7 +39,7 @@ public class Sync extends AppCompatActivity {
     private Calendar calendar;
     private SimpleDateFormat simpleDateFormat;
     private String Date;
-    private Button btnSyncData;
+    private Button btnSyncData , btncheckConnection;
     private TextView syncInfo, titleText , lastSync;
     private final String sqlCacheFileName = "offlineCache";
     private boolean syncInProgress = false;
@@ -58,12 +58,14 @@ public class Sync extends AppCompatActivity {
         titleText = findViewById(R.id.lbl_page_title);
         titleText.setText("Sync Data");
         lastSync = findViewById(R.id.last_sync);
-        simpleDateFormat = new SimpleDateFormat("dd-mm-yyyy HH:mm:ss");
+        simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date = simpleDateFormat.format(calendar.getTime());
         sync = findViewById(R.id.icon_sync);
         sync.setVisibility(View.GONE);
         btnSyncData = findViewById(R.id.btnSyncData);
         btnSyncData.setOnClickListener(syncData);
+        btncheckConnection = findViewById(R.id.btncheckConnection);
+        btncheckConnection.setOnClickListener(checkConnection);
     }
 
 
@@ -86,7 +88,7 @@ public class Sync extends AppCompatActivity {
         }
     }
 
-
+    //sync data on button click
     private final View.OnClickListener syncData = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -98,7 +100,6 @@ public class Sync extends AppCompatActivity {
                 boolean connected = meth.isNetworkAvailable(context);
 
                 if (connected) {
-
                     ArrayList<String> temp = new ArrayList<>();
                     FileInputStream fis = null;
                     try {
@@ -129,6 +130,22 @@ public class Sync extends AppCompatActivity {
                 }
             } else {
                 syncInfo.append("\nCurrently Syncing Data, please wait.");
+            }
+        }
+    };
+
+
+    //check connection on button click
+    private final View.OnClickListener checkConnection = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Methods meth = new Methods();
+            Context context = getApplicationContext();
+            boolean connected = meth.isNetworkAvailable(context);
+            if (connected) {
+                syncInfo.setText("Network is connected it is afe to sync");
+            } else {
+                syncInfo.setText("Network is not connected please don't sync data");
             }
         }
     };

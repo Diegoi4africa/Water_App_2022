@@ -599,6 +599,16 @@ public class LactalisCoolingSystemQuestions extends AppCompatActivity {
         que_lactalis_factory_VTIS_steam_condensate_tds_cont.setVisibility(View.VISIBLE);
         que_lactalis_factory_VTIS_steam_condensate_hardness_cont.setVisibility(View.VISIBLE);
 
+        que_lactalis_factory_UHT_Condenser_3_tds_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_hardness_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_ph_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_chlorides_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_molybate_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_alk_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_alk_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_bch_cont.setVisibility(View.VISIBLE);
+        que_lactalis_factory_UHT_Condenser_3_phosphonate_cont.setVisibility(View.VISIBLE);
+
         que_lactalis_factory_growth_milk_cooling_tower_tds_cont.setVisibility(View.VISIBLE);
         que_lactalis_factory_growth_milk_cooling_tower_ph_cont.setVisibility(View.VISIBLE);
         que_lactalis_factory_growth_milk_cooling_tower_hardness_cont.setVisibility(View.VISIBLE);
@@ -636,6 +646,16 @@ public class LactalisCoolingSystemQuestions extends AppCompatActivity {
         que_lactalis_factory_UHT_Condenser_2_bch_cont.setVisibility(View.GONE);
         que_lactalis_factory_UHT_Condenser_2_phosphonate_cont.setVisibility(View.GONE);
         que_lactalis_factory_UHT_Condenser_2_molybate_cont.setVisibility(View.GONE);
+
+        que_lactalis_factory_UHT_Condenser_3_tds_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_hardness_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_ph_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_chlorides_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_molybate_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_alk_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_alk_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_bch_cont.setVisibility(View.GONE);
+        que_lactalis_factory_UHT_Condenser_3_phosphonate_cont.setVisibility(View.GONE);
 
         que_lactalis_factory_VTIS_1_tds_cont.setVisibility(View.GONE);
         que_lactalis_factory_VTIS_condenser_1_ph_cont.setVisibility(View.GONE);

@@ -45,7 +45,7 @@ public class HiddenChecker extends AppCompatActivity {
         output = findViewById(R.id.lblOutput);
         arrOutput = findViewById(R.id.arrOutput);
         content = new ArrayList<>();
-//        checkConnectionEvery5Seconds();
+//      checkConnectionEvery5Seconds();
     }
 
 //    //check Connection every 5 seconds and return true if connected to internet
@@ -89,6 +89,16 @@ public class HiddenChecker extends AppCompatActivity {
         meth.getQuestions("Lactalis Warehouse", getApplicationContext(), "LactalisWarehouseQuestions");
     }
 
+    public void submitToCache3(View view) {
+        Methods meth = new Methods();
+        meth.getQuestions("Coke Factory", getApplicationContext(), "CokeFactoryQuestions");
+    }
+
+    public void submitToCache4(View view) {
+        Methods meth = new Methods();
+        meth.getQuestions("Coke Warehouse", getApplicationContext(), "CokeWarehouseQuestions");
+    }
+
     public void readCache(View view) {
         output.setText("");
         Context context = getApplicationContext();
@@ -106,6 +116,18 @@ public class HiddenChecker extends AppCompatActivity {
         Context context = getApplicationContext();
         String outputText = "";
         questionList = meth.getCachedQuestions(context, "LactalisWarehouseQuestions");
+        for (int i = 0; i < questionList.size(); i++) {
+            outputText += questionList.get(i) + "\n";
+        }
+        System.out.println(outputText);
+        output.setText(outputText);
+    }
+
+    public void readCache3(View view) {
+        output.setText("");
+        Context context = getApplicationContext();
+        String outputText = "";
+        questionList = meth.getCachedQuestions(context, "CokeFactoryQuestions");
         for (int i = 0; i < questionList.size(); i++) {
             outputText += questionList.get(i) + "\n";
         }
